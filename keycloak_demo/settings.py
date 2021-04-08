@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django-keycloak-auth.middleware.KeycloakMiddleware',
 ]
 
 ROOT_URLCONF = 'keycloak_demo.urls'
@@ -125,3 +126,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+KEYCLOAK_EXEMPT_URIS = []
+KEYCLOAK_CONFIG = {
+    'KEYCLOAK_SERVER_URL': 'http://localhost:8080/auth',
+    'KEYCLOAK_REALM': 'djangorealm',
+    'KEYCLOAK_CLIENT_ID': 'djangoclient',
+    'KEYCLOAK_CLIENT_SECRET_KEY': 'db9cf5bc-d886-46c8-a390-6b7aeee58692'
+}
