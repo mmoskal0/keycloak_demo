@@ -8,8 +8,8 @@ from demo import views
 router = DefaultRouter()
 router.register(r'questions', views.QuestionViewSet)
 
-# The API URLs are now determined automatically by the router.
 urlpatterns = [
     path('', include(router.urls)),
+    path('oidc/', include('mozilla_django_oidc.urls')),
     path('admin/', admin.site.urls),
 ]
